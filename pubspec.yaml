@@ -29,3 +29,8 @@ flutter:
   generate: true
   assets:
     - assets/images/
+  fonts:
+    - family:  Firl
+      fonts:
+        - asset: assets/fonts/Firl.ttf
+
