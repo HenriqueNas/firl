@@ -1,7 +1,17 @@
 {
-    "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    }
+  "@@locale": "en",
+  "@splashScreenGoToLogin": {
+    "description": "Go to login button text on splash screen"
+  },
+  "@splashScreenTermsAndPrivacy": {
+    "description": "Terms & Privacy Policy text on splash screen"
+  },
+  "@splashScreenWelcomeText": {
+    "description": "Welcome text on splash screen"
+  },
+  "loginPageSubtitle": "Please enter your phone number and type your name",
+  "loginPageTitle": "Just some infos about you",
+  "splashScreenGoToLogin": "Start Messaging",
+  "splashScreenTermsAndPrivacy": "Terms & Privacy Policy",
+  "splashScreenWelcomeText": "Connect easily with your family and friends over countries"
 }

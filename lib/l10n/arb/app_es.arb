@@ -1,7 +1,17 @@
 {
-    "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
-    }
+  "@@locale": "es",
+  "@splashScreenGoToLogin": {
+    "description": "Ir al texto del botón de inicio de sesión en la pantalla de inicio"
+  },
+  "@splashScreenTermsAndPrivacy": {
+    "description": "Términos y texto de la política de privacidad en la pantalla de inicio"
+  },
+  "@splashScreenWelcomeText": {
+    "description": "Texto de bienvenida en la pantalla de inicio"
+  },
+  "loginPageSubtitle": "Please enter your phone number and set a name for your account",
+  "loginPageTitle": "Just some infos about you",
+  "splashScreenGoToLogin": "Empezar a chatear",
+  "splashScreenTermsAndPrivacy": "Términos y Política de Privacidad",
+  "splashScreenWelcomeText": "Conéctese fácilmente con su familia y amigos en todos los países"
 }
