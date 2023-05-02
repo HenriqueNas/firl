@@ -1,5 +1,6 @@
+import 'package:firl/l10n/l10n.dart';
+import 'package:firl/modules/auth/auth_routes.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_modular/flutter_modular.dart';
 
 class SplashPage extends StatelessWidget {
@@ -7,6 +8,9 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(32).add(const EdgeInsets.only(top: 128)),
@@ -14,29 +18,29 @@ class SplashPage extends StatelessWidget {
           children: [
             Image.asset('assets/images/login-image.png'),
             const SizedBox(height: 42),
-            const Text(
-              'Connect easily with \n your family and friends over countries',
+            Text(
+              l10n.splashScreenWelcomeText,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              style: textTheme.headlineLarge,
             ),
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: Padding(
-        padding: const EdgeInsets.all(32),
+        padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            const TextButton(
-              onPressed: null,
-              child: Text('Terms & Privacy Policy'),
+            TextButton(
+              onPressed: () {},
+              child: Text(l10n.splashScreenTermsAndPrivacy),
             ),
             const SizedBox(height: 8),
-            FloatingActionButton.extended(
-              onPressed: () => Modular.to.pushNamed('/login'),
-              label: const Text('Start Messaging'),
+            ElevatedButton(
+              onPressed: () => Modular.to.pushNamed(AuthRoutes.login),
+              child: Text(l10n.splashScreenGoToLogin),
             ),
           ],
         ),

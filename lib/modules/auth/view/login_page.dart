@@ -1,3 +1,7 @@
+import 'package:firl/app/design_system/firl_icons.g.dart';
+import 'package:firl/app/design_system/widgets/spacer.dart';
+import 'package:firl/l10n/l10n.dart';
+import 'package:firl/modules/auth/view/widgets/phone_input.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -5,38 +9,46 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
+      appBar: AppBar(leadingWidth: 80),
       body: Padding(
         padding: const EdgeInsets.all(32).add(const EdgeInsets.only(top: 128)),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset('assets/images/login-image.png'),
-            const SizedBox(height: 42),
-            const Text(
-              'LoginPage',
+            Text(
+              l10n.loginPageTitle,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              style: textTheme.headlineLarge,
+            ),
+            const HSpacer.lg(),
+            Text(
+              l10n.loginPageSubtitle,
+              textAlign: TextAlign.center,
+              style: textTheme.labelLarge,
+            ),
+            const HSpacer.lg(),
+            const PhoneInput(),
+            const HSpacer.md(),
+            const TextField(
+              decoration: InputDecoration(
+                hintText: 'Name',
+                prefixIcon: Icon(FirlIcons.user),
+              ),
             ),
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.all(32),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: const [
-            TextButton(
-              onPressed: null,
-              child: Text('Terms & Privacy Policy'),
-            ),
-            SizedBox(height: 8),
-            FloatingActionButton.extended(
-              onPressed: null,
-              label: Text('Start Messaging'),
-            ),
-          ],
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 32),
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () {},
+          child: Text("Let's Go!"),
         ),
       ),
     );
